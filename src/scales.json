@@ -1,0 +1,26 @@
+{
+    "level3": {
+        "majorScales": [
+            "C",
+            "D",
+            "E♭",
+            "E",
+            "F",
+            "G",
+            "A♭",
+            "A",
+            "B♭"
+        ],
+        "minorScales": [
+            "Cm",
+            "Cm♯",
+            "Dm",
+            "Em",
+            "Fm",
+            "Fm♯",
+            "Gm",
+            "Am",
+            "Bm"
+        ]
+    }
+}
