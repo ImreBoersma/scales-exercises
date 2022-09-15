@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
-import ghpages from 'gh-pages'
+
 const firebaseConfig = {
   apiKey: "AIzaSyDiV2CvZF7LIALRWL-NIlsEMQFP2rbFiUg",
   authDomain: "imre-boersma.firebaseapp.com",
@@ -13,7 +13,6 @@ const firebaseConfig = {
   messagingSenderId: "759710405525",
   appId: "1:759710405525:web:b47df6beeba007d077dc9c"
 };
-ghpages.publish('dist', function(err) {});
 
 
 initializeApp(firebaseConfig);
