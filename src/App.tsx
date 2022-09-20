@@ -1,38 +1,42 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import scales from './scales.json'
-function App() {
-  const [currentScale, setCurrentScale] = useState<String>("")
-  const getRandomScale = () => {
-    const scales2 = scales.level3.majorScales.concat(scales.level3.minorScales)
-    return scales2[~~(Math.random() * scales2.length)]
-  }
+import { useEffect, useState } from 'react';
+import './App.css';
+import { fetchScales, selectScales } from './store/scalesSlice';
+import { useAppDispatch, useAppSelector } from './utils/hooks';
+import { getRandomItem } from './utils/randomItem';
 
-  
+const App = (): any => {
+  const [currentScale, setCurrentScale] = useState<String>("")
+  const dispatch = useAppDispatch()
+  const scales = useAppSelector(selectScales)
 
   useEffect(() => {
-    document.addEventListener('keydown', function(event){
-      event.preventDefault()
-      event.stopPropagation()
+    (async () => {
+      dispatch(fetchScales());
+    })();
+  }, [dispatch]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', function (event) {
+      if (process.env.NODE_ENV !== 'development') {
+        event.preventDefault()
+        event.stopPropagation()
+      }
       if (event.code === 'Space') {
-        setCurrentScale(getRandomScale())
+        setCurrentScale(getRandomItem(scales))
       }
     })
-  }, [])
-
+  }, [scales])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
+    <div className="App App-header">
+      <h1>
         {currentScale}
-        </h1>
-        <p className="App-link">
-          Press 'space' for a new scale.
-        </p>
-      </header>
+      </h1>
+      <p className="App-link">
+        Press 'space' for a new scale.
+      </p>
     </div>
-  ); 
+  );
 }
 
 export default App;
