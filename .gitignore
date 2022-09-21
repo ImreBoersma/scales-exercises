@@ -247,3 +247,6 @@ $RECYCLE.BIN/
 # .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/firebase,windows,yarn,react,node,visualstudiocode,git
+
+**/*.cache
+/build

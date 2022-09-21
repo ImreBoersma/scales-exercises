@@ -1,9 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 import { db } from '../services/firebase.service'
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore"
+import { Scale } from '../utils/types'
+import { mapToScale } from '../utils/mapper'
 
-const initialState: any[] = []
+const initialState: { scales: Scale[] } = {
+    scales: []
+}
 
 export const scalesSlice = createSlice({
     name: 'scales',
@@ -16,8 +20,8 @@ export const scalesSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchScales.fulfilled,
             (state, { payload }) => {
-                state.push(...payload);
-            });
+                state.scales.push(...payload)
+            })
     },
 })
 
@@ -30,10 +34,9 @@ export const scalesReducer = scalesSlice.reducer
 export const fetchScales = createAsyncThunk(
     'scales/fetch',
     async () => {
-        const querySnapshot = await getDocs(collection(db, "scales"));
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
-        });
-        return querySnapshot.docs
+        const querySnapshot = await getDocs(collection(db, "scales"))
+        return querySnapshot.docs.map((doc) => {
+            return mapToScale({ doc: doc.data(), id: doc.id })
+        })
     }
 )
