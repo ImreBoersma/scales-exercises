@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install packages
-        run: yarn install --prod --frozen-lockfile
+        run: yarn install --frozen-lockfile
   build:
     runs-on: ubuntu-latest
     needs: [install]
