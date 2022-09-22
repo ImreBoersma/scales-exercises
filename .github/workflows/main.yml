@@ -10,8 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Install packages
+        run: npm ci
       - name: Build application
-        run: npm ci && npm run build && mv build dist
+        run: npm run build && mv build dist
         env:
           REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
           REACT_APP_APP_ID: ${{ secrets.REACT_APP_APP_ID }}
@@ -19,10 +21,9 @@ jobs:
           REACT_APP_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_MESSAGING_SENDER_ID }}
           REACT_APP_PROJECT_ID: ${{ secrets.REACT_APP_PROJECT_ID }}
           REACT_APP_STORAGE_BUCKET: ${{ secrets.REACT_APP_STORAGE_BUCKET }}
-          CI: false
   deploy:
     runs-on: ubuntu-latest
-    needs: [install, build]
+    needs: [build]
     steps:
       - name: Deploy to Firebase
         run: firebase deploy
