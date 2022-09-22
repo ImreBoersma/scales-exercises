@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES5",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
     ],
-    "outDir": "dist",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -14,16 +13,14 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "resolveJsonModule": true
   },
   "include": [
-    "src",
-    "firebase.json",
-    ".firebaserc"
+    "firebase.json"
   ]
 }
