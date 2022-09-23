@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Copy firebase.json
-        run: cp firebase.json ./public/firebase.json
+        run: ls && cp firebase.json ./public/firebase.json
       - name: Install dependencies
         run: npm install
       - name: Generate build
