@@ -5,8 +5,8 @@
   "targets": {
     "imre-boersma": {
       "hosting": {
-        "scales-imreboersma": [
-          "imre-boersma"
+        "scales": [
+          "scales-imreboersma"
         ]
       }
     }
