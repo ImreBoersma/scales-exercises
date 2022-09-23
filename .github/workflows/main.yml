@@ -34,15 +34,5 @@ jobs:
         with:
           name: react-github-actions-build
           path: build  
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Install firebase
-        run: npm i -g firebase firebase-tools
-      - name: Get artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: react-github-actions-build
       - name: Deploy to Firebase
-        run: ls && firebase deploy
+        run: firebase deploy
