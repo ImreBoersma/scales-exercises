@@ -9,3 +9,5 @@ export const mapToScale = (entry: { doc: DocumentData, id: string }): Scale => {
         notation: entry.doc.notation
     }
 }
+
+export const mapLevel = (level: number) => ['A', 'B', 'C', 'D'][level - 1]
