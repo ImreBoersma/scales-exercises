@@ -1,14 +1,14 @@
-import InfoIcon from '@mui/icons-material/Info';
-import { IconButton, Slider, Tooltip, Typography } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import { fetchScales, selectScales } from './store/scalesSlice';
-import { useAppDispatch, useAppSelector } from './utils/hooks';
-import { mapLevel } from './utils/mapper';
-import { getRandomItem } from './utils/randomItem';
-import { redirect } from './utils/redirect';
-import { Scale } from './utils/types';
+import InfoIcon from '@mui/icons-material/Info'
+import { Button, IconButton, Slider, Tooltip, Typography } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
+import React, { useEffect, useState } from 'react'
+import './App.css'
+import { fetchScales, selectScales } from './store/scalesSlice'
+import { useAppDispatch, useAppSelector } from './utils/hooks'
+import { mapLevel } from './utils/mapper'
+import { getRandomItem } from './utils/randomItem'
+import { redirect } from './utils/redirect'
+import { Scale } from './utils/types'
 
 const App = (): any => {
   const [currentScale, setCurrentScale] = useState<Scale>()
@@ -42,7 +42,11 @@ const App = (): any => {
         </Typography>
       </Grid>
       <Grid>
-        <Typography variant="h4" className="App-link">Press 'space' for a new scale</Typography>
+        <Button variant="text" onClick={() => setCurrentScale(getRandomItem(scales.scales, level))}>
+        <Typography variant="h4" className="App-link">Click here or press 'space' for a new scale</Typography>
+        </Button>
+      </Grid>
+      <Grid>
       </Grid>
       <Grid>
         <Typography variant="body1">
