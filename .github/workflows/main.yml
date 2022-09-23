@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18.x
+      - name: Copy firebase.json
+        run: cp firebase.json ./public/firebase.json
       - name: Install dependencies
         run: npm install
       - name: Generate build
