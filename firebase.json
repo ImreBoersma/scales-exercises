@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "scales-imreboersma",
     "public": "build",
     "ignore": [
       "firebase.json",

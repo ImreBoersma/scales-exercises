@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "imre-boersma"
-  }
+  },
+  "targets": {
+    "imre-boersma": {
+      "hosting": {
+        "scales-imreboersma": [
+          "imre-boersma"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
