@@ -45,6 +45,6 @@
     "@types/react-dom": "^18.2.6",
     "@types/react-redux": "^7.1.25",
     "typescript": "^5.1.6",
-    "web-vitals": "^3.3.2"
+    "web-vitals": "^3.4.0"
   }
 }
