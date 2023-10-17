@@ -42,7 +42,7 @@
   "devDependencies": {
     "@types/node": "^20.8.6",
     "@types/react": "^18.2.27",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "^18.2.13",
     "@types/react-redux": "^7.1.27",
     "typescript": "^5.2.2",
     "web-vitals": "^3.5.0"
