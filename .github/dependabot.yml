@@ -4,5 +4,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    assignees:
+    reviewers:
       - "ImreBoersma"
+    versioning-strategy: "increase"
