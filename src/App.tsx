@@ -31,15 +31,19 @@ const App = () => {
 	}, [dispatch]);
 
 	useEffect(() => {
-		document.addEventListener("keydown", (event) => {
+		const onKeyDown = (event: KeyboardEvent) => {
 			if (!import.meta.env.DEV) {
 				event.preventDefault();
 				event.stopPropagation();
 			}
 			if (event.code === "Space") {
-				setCurrentScale(getRandomItem(scales.scales, level));
+				setCurrentScale((current) =>
+					getRandomItem(scales.scales, level, current),
+				);
 			}
-		});
+		};
+		document.addEventListener("keydown", onKeyDown);
+		return () => document.removeEventListener("keydown", onKeyDown);
 	}, [scales, level]);
 
 	return (
@@ -52,7 +56,11 @@ const App = () => {
 			<Box>
 				<Button
 					variant="text"
-					onClick={() => setCurrentScale(getRandomItem(scales.scales, level))}
+					onClick={() =>
+						setCurrentScale((current) =>
+							getRandomItem(scales.scales, level, current),
+						)
+					}
 				>
 					<Typography variant="h4" className="App-link">
 						Click here or press 'space' for a new scale
