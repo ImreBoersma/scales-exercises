@@ -2,6 +2,7 @@
 	"name": "scales-exercises",
 	"version": "0.1.1",
 	"private": true,
+	"type": "module",
 	"license": "MIT",
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
