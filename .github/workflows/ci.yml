@@ -10,4 +10,4 @@ jobs:
         with:
           node-version: 24
           cache: yarn
-      - run: yarn ci && yarn lint && yarn build
+      - run: yarn ci && yarn lint && yarn test && yarn build
