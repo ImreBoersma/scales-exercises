@@ -76,7 +76,7 @@ const App = () => {
 					aria-label="Level"
 					value={level}
 					valueLabelFormat={(level) => mapLevel(level)}
-					onChange={(_, n) => setLevel(n[0] || n)}
+					onChange={(_, n) => setLevel(Array.isArray(n) ? n[0] : n)}
 					step={1}
 					min={1}
 					max={4}
