@@ -1,42 +1,38 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import type { RootState } from '../store'
-import { db } from '../services/firebase.service'
-import { collection, getDocs } from "firebase/firestore"
-import { Scale } from '../utils/types'
-import { mapToScale } from '../utils/mapper'
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../services/firebase.service";
+import type { RootState } from "../store";
+import { mapToScale } from "../utils/mapper";
+import type { Scale } from "../utils/types";
 
 const initialState: { scales: Scale[] } = {
-    scales: []
-}
+	scales: [],
+};
 
 export const scalesSlice = createSlice({
-    name: 'scales',
-    initialState,
-    reducers: {
-        generate: (state) => {
-            console.log(state)
-        },
-    },
-    extraReducers: (builder) => {
-        builder.addCase(fetchScales.fulfilled,
-            (state, { payload }) => {
-                state.scales.push(...payload)
-            })
-    },
-})
+	name: "scales",
+	initialState,
+	reducers: {
+		generate: (state) => {
+			console.log(state);
+		},
+	},
+	extraReducers: (builder) => {
+		builder.addCase(fetchScales.fulfilled, (state, { payload }) => {
+			state.scales.push(...payload);
+		});
+	},
+});
 
-export const { generate } = scalesSlice.actions
+export const { generate } = scalesSlice.actions;
 
-export const selectScales = (state: RootState) => state.scales
+export const selectScales = (state: RootState) => state.scales;
 
-export const scalesReducer = scalesSlice.reducer
+export const scalesReducer = scalesSlice.reducer;
 
-export const fetchScales = createAsyncThunk(
-    'scales/fetch',
-    async () => {
-        const querySnapshot = await getDocs(collection(db, "scales"))
-        return querySnapshot.docs.map((doc) => {
-            return mapToScale({ doc: doc.data(), id: doc.id })
-        })
-    }
-)
+export const fetchScales = createAsyncThunk("scales/fetch", async () => {
+	const querySnapshot = await getDocs(collection(db, "scales"));
+	return querySnapshot.docs.map((doc) => {
+		return mapToScale({ doc: doc.data(), id: doc.id });
+	});
+});

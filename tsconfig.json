@@ -1,26 +1,20 @@
 {
-  "compilerOptions": {
-    "target": "ES5",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "resolveJsonModule": true
-  },
-  "include": [
-    "firebase.json"
-  ]
+	"compilerOptions": {
+		"target": "ES5",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"resolveJsonModule": true
+	},
+	"include": ["firebase.json"]
 }
