@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore/lite";
 import { db } from "../services/firebase.service";
 import type { RootState } from "../store";
 import { mapToScale } from "../utils/mapper";
