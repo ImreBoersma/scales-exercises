@@ -24,7 +24,7 @@ const App = () => {
 
 	useEffect(() => {
 		document.addEventListener("keydown", (event) => {
-			if (process.env.NODE_ENV !== "development") {
+			if (!import.meta.env.DEV) {
 				event.preventDefault();
 				event.stopPropagation();
 			}

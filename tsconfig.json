@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "ES5",
+		"target": "ESNext",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"allowJs": true,
 		"skipLibCheck": true,
@@ -9,12 +9,12 @@
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
 		"noFallthroughCasesInSwitch": true,
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
 		"resolveJsonModule": true
 	},
-	"include": ["firebase.json"]
+	"include": ["src", "vite.config.ts"]
 }
