@@ -1,6 +1,13 @@
 import InfoIcon from "@mui/icons-material/Info";
-import { Button, IconButton, Slider, Tooltip, Typography } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import {
+	Box,
+	Button,
+	IconButton,
+	Slider,
+	Stack,
+	Tooltip,
+	Typography,
+} from "@mui/material";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { fetchScales, selectScales } from "./store/scalesSlice";
@@ -8,6 +15,7 @@ import { useAppDispatch, useAppSelector } from "./utils/hooks";
 import { mapLevel } from "./utils/mapper";
 import { getRandomItem } from "./utils/randomItem";
 import { redirect } from "./utils/redirect";
+
 import type { Scale } from "./utils/types";
 
 const App = () => {
@@ -35,13 +43,13 @@ const App = () => {
 	}, [scales, level]);
 
 	return (
-		<Grid container spacing={2} direction="column">
-			<Grid className="App-header">
-				<Typography variant="h1" fontWeight={500}>
+		<Stack spacing={2}>
+			<Box className="App-header">
+				<Typography variant="h1" sx={{ fontWeight: 500 }}>
 					{currentScale?.name}
 				</Typography>
-			</Grid>
-			<Grid>
+			</Box>
+			<Box>
 				<Button
 					variant="text"
 					onClick={() => setCurrentScale(getRandomItem(scales.scales, level))}
@@ -50,9 +58,9 @@ const App = () => {
 						Click here or press 'space' for a new scale
 					</Typography>
 				</Button>
-			</Grid>
-			<Grid></Grid>
-			<Grid>
+			</Box>
+			<Box></Box>
+			<Box>
 				<Typography variant="body1">
 					Level: {mapLevel(level)}
 					<Tooltip
@@ -81,8 +89,8 @@ const App = () => {
 					min={1}
 					max={4}
 				/>
-			</Grid>
-		</Grid>
+			</Box>
+		</Stack>
 	);
 };
 
