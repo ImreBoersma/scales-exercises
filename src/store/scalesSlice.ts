@@ -19,7 +19,7 @@ export const scalesSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchScales.fulfilled, (state, { payload }) => {
-			state.scales.push(...payload);
+			state.scales = payload;
 		});
 	},
 });
