@@ -103,6 +103,13 @@ describe("App", () => {
 		expect(seen).toContain("E♭m");
 	});
 
+	it("ignores keys other than Space", () => {
+		fireEvent.keyDown(document, { code: "Space" });
+		const first = heading();
+		fireEvent.keyDown(document, { code: "Enter" });
+		expect(heading()).toBe(first);
+	});
+
 	it("only blocks default key behaviour in production", () => {
 		expect(fireEvent.keyDown(document, { code: "Space" })).toBe(true);
 		vi.stubEnv("DEV", false);
