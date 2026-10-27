@@ -1,6 +1,7 @@
 {
-	"short_name": "Scales exercises",
-	"name": "Exercise scales",
+	"name": "Scale exercises",
+	"short_name": "Scales",
+	"description": "Practise your scales: get a random scale for your level, A to D, based on the KNMO curriculum for wind instruments.",
 	"icons": [
 		{
 			"src": "icon-192.png",
@@ -21,6 +22,6 @@
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"theme_color": "#61dafb",
+	"theme_color": "#282c34",
 	"background_color": "#282c34"
 }
