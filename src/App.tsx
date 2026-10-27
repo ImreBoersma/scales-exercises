@@ -7,6 +7,7 @@ import {
 	Stack,
 	Tooltip,
 	Typography,
+	useMediaQuery,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import "./App.css";
@@ -23,6 +24,10 @@ const App = () => {
 	const dispatch = useAppDispatch();
 	const scales = useAppSelector(selectScales);
 	const [level, setLevel] = useState<number>(1);
+	const touch = useMediaQuery("(pointer: coarse)");
+
+	const nextScale = () =>
+		setCurrentScale((current) => getRandomItem(scales.scales, level, current));
 
 	useEffect(() => {
 		(async () => {
@@ -44,23 +49,25 @@ const App = () => {
 	}, [scales, level]);
 
 	return (
-		<Stack spacing={2}>
-			<Box className="App-header">
+		<Stack
+			spacing={2}
+			sx={{ width: "100%", maxWidth: 900, px: 3, boxSizing: "border-box" }}
+		>
+			<Box className="App-header" onClick={nextScale}>
 				<Typography variant="h1" sx={{ fontWeight: 500 }}>
 					{currentScale?.name}
 				</Typography>
 			</Box>
 			<Box>
-				<Button
-					variant="text"
-					onClick={() =>
-						setCurrentScale((current) =>
-							getRandomItem(scales.scales, level, current),
-						)
-					}
-				>
-					<Typography variant="h4" className="App-link">
-						Click here or press 'space' for a new scale
+				<Button variant="text" onClick={nextScale}>
+					<Typography
+						variant="h4"
+						className="App-link"
+						sx={{ fontSize: { xs: "1.5rem", sm: "2.125rem" } }}
+					>
+						{touch
+							? "Tap here for a new scale"
+							: "Click here or press 'space' for a new scale"}
 					</Typography>
 				</Button>
 			</Box>
