@@ -12,19 +12,13 @@ const initialState: { scales: Scale[] } = {
 export const scalesSlice = createSlice({
 	name: "scales",
 	initialState,
-	reducers: {
-		generate: (state) => {
-			console.log(state);
-		},
-	},
+	reducers: {},
 	extraReducers: (builder) => {
 		builder.addCase(fetchScales.fulfilled, (state, { payload }) => {
 			state.scales = payload;
 		});
 	},
 });
-
-export const { generate } = scalesSlice.actions;
 
 export const selectScales = (state: RootState) => state.scales;
 
