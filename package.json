@@ -1,6 +1,7 @@
 {
 	"name": "scales-exercises",
 	"version": "0.1.1",
+	"description": "Practise your scales: get a random scale for your level, A to D, based on the KNMO curriculum for wind instruments.",
 	"private": true,
 	"type": "module",
 	"license": "MIT",
