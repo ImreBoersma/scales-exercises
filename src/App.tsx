@@ -32,11 +32,8 @@ const App = () => {
 
 	useEffect(() => {
 		const onKeyDown = (event: KeyboardEvent) => {
-			if (!import.meta.env.DEV) {
-				event.preventDefault();
-				event.stopPropagation();
-			}
 			if (event.code === "Space") {
+				event.preventDefault();
 				setCurrentScale((current) =>
 					getRandomItem(scales.scales, level, current),
 				);
