@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { Provider } from "react-redux";
-import reportWebVitals from "./reportWebVitals";
 import { store } from "./store";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -19,5 +18,3 @@ root.render(
 		</Provider>
 	</StrictMode>,
 );
-
-reportWebVitals();
