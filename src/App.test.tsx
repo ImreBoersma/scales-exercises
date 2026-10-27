@@ -102,4 +102,23 @@ describe("App", () => {
 		}
 		expect(seen).toContain("E♭m");
 	});
+
+	it("only blocks default key behaviour in production", () => {
+		expect(fireEvent.keyDown(document, { code: "Space" })).toBe(true);
+		vi.stubEnv("DEV", false);
+		expect(fireEvent.keyDown(document, { code: "Space" })).toBe(false);
+		vi.unstubAllEnvs();
+	});
+
+	it("opens the KNMO curriculum in a new tab without a referrer", () => {
+		const click = vi
+			.spyOn(HTMLAnchorElement.prototype, "click")
+			.mockImplementation(() => {});
+		fireEvent.click(screen.getByRole("button", { name: /KNMO/ }));
+		const link = click.mock.contexts[0] as HTMLAnchorElement;
+		expect(link.href).toMatch(/knmo\.nl\/.+\.pdf$/);
+		expect(link.target).toBe("_blank");
+		expect(link.rel).toBe("noreferrer");
+		click.mockRestore();
+	});
 });
