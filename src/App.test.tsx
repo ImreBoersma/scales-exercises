@@ -110,12 +110,18 @@ describe("App", () => {
 		expect(heading()).toBe(first);
 	});
 
-	it("only blocks default key behaviour in production", () => {
-		expect(fireEvent.keyDown(document, { code: "Space" })).toBe(true);
-		vi.stubEnv("DEV", false);
-		expect(fireEvent.keyDown(document, { code: "Space" })).toBe(false);
-		vi.unstubAllEnvs();
-	});
+	it.each([true, false])(
+		"only blocks the default action of Space (DEV=%s)",
+		(dev) => {
+			vi.stubEnv("DEV", dev);
+			expect(fireEvent.keyDown(document, { code: "Space" })).toBe(false);
+			expect(fireEvent.keyDown(document, { code: "Tab" })).toBe(true);
+			expect(fireEvent.keyDown(document, { code: "KeyR", metaKey: true })).toBe(
+				true,
+			);
+			vi.unstubAllEnvs();
+		},
+	);
 
 	it("opens the KNMO curriculum in a new tab without a referrer", () => {
 		const click = vi
