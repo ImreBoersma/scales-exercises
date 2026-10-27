@@ -18,8 +18,6 @@
 		"react-redux": "^9.3.0"
 	},
 	"scripts": {
-		"preci": "rm -rf node_modules",
-		"ci": "yarn install --immutable",
 		"start": "vite",
 		"build": "tsc && vite build",
 		"lint": "biome check .",
