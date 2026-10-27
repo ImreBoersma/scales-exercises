@@ -1,2 +1,3 @@
 # Scales exercises
+
 Scales.imreboersma.nl offers a valuable resource for musicians seeking to enhance their skills through focused practice. Developed by Imre Boersma, this platform is dedicated to scales exercises, providing a structured and efficient way for musicians of all levels to improve their technique, dexterity, and familiarity with different scales. Whether you're a beginner looking to build a strong foundation or an advanced player aiming to refine your abilities, this website offers a variety of scales exercises to help you achieve your musical goals.
