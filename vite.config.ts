@@ -9,5 +9,9 @@ export default defineConfig({
 	test: {
 		environment: "jsdom",
 		env: { REACT_APP_PROJECT_ID: "test-project", REACT_APP_API_KEY: "test" },
+		coverage: {
+			include: ["src/**"],
+			exclude: ["src/**/*.test.*", "src/**/*.d.ts"],
+		},
 	},
 });
