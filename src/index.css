@@ -5,8 +5,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #282c34;
 	color: white;
-	min-height: 100vh;
-	max-height: 100vh;
+	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

@@ -123,6 +123,11 @@ describe("App", () => {
 		},
 	);
 
+	it("shows a new scale when the scale itself is tapped", () => {
+		fireEvent.click(screen.getByRole("heading", { level: 1 }));
+		expect(["C", "G"]).toContain(heading());
+	});
+
 	it("opens the KNMO curriculum in a new tab without a referrer", () => {
 		const click = vi
 			.spyOn(HTMLAnchorElement.prototype, "click")
@@ -133,5 +138,24 @@ describe("App", () => {
 		expect(link.target).toBe("_blank");
 		expect(link.rel).toBe("noreferrer");
 		click.mockRestore();
+	});
+});
+
+describe("App on a touchscreen", () => {
+	afterEach(() => {
+		cleanup();
+		vi.unstubAllGlobals();
+	});
+
+	it("asks for a tap instead of the space bar", async () => {
+		vi.stubGlobal("matchMedia", (query: string) => ({
+			matches: query === "(pointer: coarse)",
+			media: query,
+			addEventListener: () => {},
+			removeEventListener: () => {},
+		}));
+		await renderApp();
+		expect(screen.getByRole("button", { name: /^tap/i })).toBeTruthy();
+		expect(screen.queryByText(/space/i)).toBeNull();
 	});
 });
