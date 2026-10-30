@@ -1,15 +1,10 @@
 name: CI
-"on":
+on:
+  push: { branches: [main] }
   pull_request:
-permissions:
-  contents: read
+permissions: {}
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: yarn
-      - run: yarn install --immutable && yarn lint && yarn test && yarn build
+  ci:
+    uses: ImreBoersma/projects/.github/workflows/ci-node.yml@002-shared-workflows
+    with: { artifact: build }
+    secrets: { build-env: "${{ secrets.BUILD_ENV }}" }
