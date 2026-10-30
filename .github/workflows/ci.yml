@@ -8,3 +8,8 @@ jobs:
     uses: ImreBoersma/projects/.github/workflows/ci-node.yml@main
     with: { artifact: build }
     secrets: { build-env: "${{ secrets.BUILD_ENV }}" }
+  deploy:
+    needs: ci
+    uses: ImreBoersma/projects/.github/workflows/deploy-firebase.yml@main
+    with: { project-id: imre-boersma, target: scales }
+    secrets: { firebase-service-account: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_IMRE_BOERSMA }}" }
