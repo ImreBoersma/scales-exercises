@@ -12,4 +12,5 @@ jobs:
     needs: ci
     uses: ImreBoersma/projects/.github/workflows/deploy-firebase.yml@main
     with: { project-id: imre-boersma, target: scales }
-    secrets: { firebase-service-account: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_IMRE_BOERSMA }}" }
+    secrets:
+      firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_IMRE_BOERSMA }}
