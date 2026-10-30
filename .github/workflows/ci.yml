@@ -4,6 +4,6 @@ on:
   pull_request:
 jobs:
   ci:
-    uses: ImreBoersma/projects/.github/workflows/ci-node.yml@002-shared-workflows
+    uses: ImreBoersma/projects/.github/workflows/ci-node.yml@main
     with: { artifact: build }
     secrets: { build-env: "${{ secrets.BUILD_ENV }}" }
