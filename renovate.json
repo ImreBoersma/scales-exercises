@@ -1,0 +1,6 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"github>ImreBoersma/projects//renovate/default#003-renovate-preset"
+	]
+}
