@@ -5,7 +5,6 @@ on:
 permissions: { contents: read }
 jobs:
   board:
-    uses: ImreBoersma/projects/.github/workflows/add-to-board.yml@004-project-board
-    with: { ref: 004-project-board }
+    uses: ImreBoersma/projects/.github/workflows/add-to-board.yml@main
     secrets:
       board-token: ${{ secrets.BOARD_TOKEN }}
