@@ -2031,36 +2031,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-v8@npm:5.1.1":
-  version: 5.1.1
-  resolution: "@vitest/coverage-v8@npm:5.1.1"
+"@vitest/coverage-v8@npm:5.1.2":
+  version: 5.1.2
+  resolution: "@vitest/coverage-v8@npm:5.1.2"
   dependencies:
     "@bcoe/v8-coverage": "npm:^1.0.2"
-    "@vitest/istanbul-lib-coverage": "npm:^2.1.0"
-    "@vitest/istanbul-lib-report": "npm:^2.1.0"
-    ast-v8-to-istanbul: "npm:^1.0.7"
+    "@vitest/istanbul-lib-coverage": "npm:^2.1.1"
+    "@vitest/istanbul-lib-report": "npm:^2.1.1"
+    ast-v8-to-istanbul: "npm:^1.0.8"
     magicast: "npm:^0.5.5"
     obug: "npm:^3.0.0"
     std-env: "npm:^4.3.0"
     tinyrainbow: "npm:^3.2.0"
   peerDependencies:
-    "@vitest/browser": 5.1.1
-    vitest: 5.1.1
+    "@vitest/browser": 5.1.2
+    vitest: 5.1.2
   peerDependenciesMeta:
     "@vitest/browser":
       optional: true
-  checksum: 10c0/f18df6e9bb4d874c490913061886ea74c187ac7d01c6681b11990bda5df8d0d16e6d6b4ee3bb82de447d00e93992eff4d650b02a1dcb59764f05e488f2e8a476
+  checksum: 10c0/3c6e19941b450d8f3f085c07028e184be144d226aa74b5335c8f71cdb36ff7c81dae282b93dea5675b132399470729800acd9f5d5dc4e95c03bea635b628a697
   languageName: node
   linkType: hard
 
-"@vitest/istanbul-lib-coverage@npm:2.1.1, @vitest/istanbul-lib-coverage@npm:^2.1.0":
+"@vitest/istanbul-lib-coverage@npm:2.1.1, @vitest/istanbul-lib-coverage@npm:^2.1.1":
   version: 2.1.1
   resolution: "@vitest/istanbul-lib-coverage@npm:2.1.1"
   checksum: 10c0/40585c38468dd721017b9d191f0defe597fad4ed993169dfcd0a74ea9d3873d49ec5a3f74dfcf3eeef3342e09a315bf6a79a2f595831929a44a7054294b4434b
   languageName: node
   linkType: hard
 
-"@vitest/istanbul-lib-report@npm:^2.1.0":
+"@vitest/istanbul-lib-report@npm:^2.1.1":
   version: 2.1.1
   resolution: "@vitest/istanbul-lib-report@npm:2.1.1"
   dependencies:
@@ -2142,14 +2142,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ast-v8-to-istanbul@npm:^1.0.7":
-  version: 1.0.7
-  resolution: "ast-v8-to-istanbul@npm:1.0.7"
+"ast-v8-to-istanbul@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "ast-v8-to-istanbul@npm:1.0.8"
   dependencies:
     "@jridgewell/trace-mapping": "npm:^0.3.31"
     estree-walker: "npm:^3.0.3"
     js-tokens: "npm:^10.0.0"
-  checksum: 10c0/c6bbfbf8b8adc8d793f8d10fbf9bcb25b0c65f2faa73ec1e41d2937a9c18327167b9395134943a4814dd3d095d2453b2f0f71a5d33aecd808ac4725c23e69918
+  checksum: 10c0/85d76e87dce119cbc29de56d6f3f0ae8d2cc97eb42978f6857ee7e184030b5ca5c7378a565a6f85b833d2ea855469d750d912f921ad16bacb82b72b07f946d0a
   languageName: node
   linkType: hard
 
@@ -3412,7 +3412,7 @@ __metadata:
     "@types/react": "npm:^19.3.0"
     "@types/react-dom": "npm:^19.3.0"
     "@vitejs/plugin-react": "npm:^6.1.2"
-    "@vitest/coverage-v8": "npm:5.1.1"
+    "@vitest/coverage-v8": "npm:5.1.2"
     firebase: "npm:^13.1.0"
     jsdom: "npm:^31.0.0"
     react: "npm:^19.3.1"
